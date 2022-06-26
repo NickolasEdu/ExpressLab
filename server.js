@@ -4,7 +4,29 @@ const app = express()
 app.set("view engine", "ejs")
 
 app.get("/", function(req, res) {
-    res.render('pages/index')
+
+    const items = [
+        {
+            Title: "First title",
+            Text: "First text"
+        },
+        {
+            Title: "Second title",
+            Text: "Second text"
+        },
+        {
+            Title: "Three title",
+            Text: "Three text"
+        },
+        {
+            Title: "Fourth title",
+            Text: "Fourth text"
+        }
+    ];
+
+    res.render('pages/index', {
+        list: items
+    })
 })
 
 app.get("/about", function(req, res) {

@@ -4,7 +4,7 @@
 
     <body class="container">
 
-        <%- include('../partials/header') %> 
+        <%- include('../partials/header', {descripage: 'Home'}) %> 
 
         <main>
             <div class="jumbotron">
@@ -12,6 +12,16 @@
                 <p>Conceitos básicos de EJS</p>
             </div>
         </main>
+
+        <ul>
+            <% list.forEach(function(item) { %>
+                
+                <li>
+                    <strong><%= item.Title %></strong> <%= item.Text %>
+                </li>
+                
+            <% });  %> 
+        </ul>
 
         <%- include('../partials/footer') %> 
 
